@@ -1,0 +1,29 @@
+{% extends 'header.html' %} {% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/edit_task.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+        <form class="form" method="post" action="{% url 'edittask' task.id %}">
+          {% csrf_token %}
+          <h1>Edit Tasks</h1>
+          <div class="form-group">
+            <label for="title">Task Title</label>
+            <input type="text"  name="title" value="{{ task.title }}" >
+
+            <label for="description">Descrition</label>
+            <input type="text" name="description" value="{{ task.description }}">
+
+          </div>
+          <button class="form-submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+</body>
+</html>
+{% endblock %}

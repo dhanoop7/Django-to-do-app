@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, rgba(251,3,208,1) 0%, rgba(5,18,245,0.9921218487394958) 100%);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 500px;
+
+}
+
+.logo{
+    color: white;
+}
+
+.logo h1{
+    font-weight: 300;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.container {
+    text-align: center;
+    margin-top: 10%;
+    
+}
+
+.container h1{
+
+    font-weight: 300;
+    font-size: 70px;
+    color: #fff;
+}
+
+.home-des{
+    
+    color: white;
+    font-style: italic;
+    font-weight: 100;
+    
+}
+
+button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    cursor: pointer;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   button:hover {
+    color: #fff;
+   }
+   
+   button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   button:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }

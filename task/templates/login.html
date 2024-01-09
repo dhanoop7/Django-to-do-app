@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form class="form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <p class="title">Login </p>
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+
+            <p class="message">Login now and get full access to our app. </p>
+                
+                    
+            <label>
+                <input class="input" type="text" name="username">
+                <span>Username</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password"  name="password">
+                <span>Password</span>
+            </label>
+            <button class="submit" type="submit">Login</button>
+            <p class="signin">Do not have an acount ? <a href="{% url 'register' %}">Signup</a> <a href="{% url 'home' %}">Explore</a> </p>
+        </form>
+    </div>
+</body>
+</html>

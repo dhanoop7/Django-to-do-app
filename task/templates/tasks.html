@@ -1,0 +1,36 @@
+{% extends 'header.html' %} {% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/tasks.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tasks ToDo</h1>
+    <div class="table">
+        <table>
+            <thead>
+                <tr >
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr class="content">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td><a href="{% url 'edittask' task.id %}"><button>Edit</button></a></td>
+                        <td><a href="{% url 'completedtask' task.id %}"><button>Completed</button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>
+{% endblock %}

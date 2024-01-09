@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <form class="form" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            
+            <p class="title">Register </p>
+            {% if error_message %}
+                <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <p class="message">Signup now and get full access to our app. </p>
+                
+                    
+            <label>
+                <input class="input" type="text" name='username'>
+                <span>Username</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password"  name="password">
+                <span>Password</span>
+            </label>
+            <label>
+                <input class="input" type="password"  name="confirm_password">
+                <span>Confirm password</span>
+            </label>
+            <button class="submit" type="submit">Submit</button>
+            <p class="signin">Already have an acount ? <a href="{% url 'login' %}">Login</a>    <a href="{% url 'home' %}">Explore</a></p>
+        </form>
+    </div>
+</body>
+</html>
